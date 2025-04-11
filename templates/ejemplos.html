@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplos de MNIST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .ejemplos-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .ejemplo-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .ejemplo-item img {
+            width: 64px;
+            height: 64px;
+        }
+        .btn-test {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejemplos de Dígitos MNIST</h1>
+        <p>Estos son ejemplos tomados directamente del conjunto de datos MNIST. Haz clic en "Probar" para ver la predicción del modelo.</p>
+        
+        <div class="ejemplos-grid">
+            {% for ejemplo in ejemplos %}
+            <div class="ejemplo-item">
+                <img src="{{ url_for('static', filename='uploads/' + ejemplo.filename) }}" alt="Dígito {{ ejemplo.digit }}">
+                <p>Dígito real: {{ ejemplo.digit }}</p>
+                <a href="{{ url_for('predict_ejemplo', filename=ejemplo.filename) }}" class="btn-test">Probar</a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <a href="/" class="btn-back" style="margin-top: 20px;">Volver al inicio</a>
+    </div>
+</body>
+</html>

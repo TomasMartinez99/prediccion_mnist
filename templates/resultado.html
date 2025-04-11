@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de Predicción</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado de la Predicción</h1>
+        
+        <div class="result-container">
+            <div class="image-comparison">
+                <div class="image-box">
+                    <h3>Imagen Original</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + imagen) }}" alt="Imagen original">
+                </div>
+                <div class="image-box">
+                    <h3>Imagen Procesada</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + imagen_procesada) }}" alt="Imagen procesada">
+                </div>
+            </div>
+            
+            <div class="prediction-details">
+                <h2>Predicción: Dígito {{ clase }}</h2>
+                <p><strong>Confianza:</strong> {{ confianza }}%</p>
+            </div>
+
+            {% if real_digit %}
+            <div class="prediction-details" style="margin-top: 10px; background-color: #e8f5e9;">
+                <p><strong>Dígito real:</strong> {{ real_digit }}</p>
+            </div>
+            {% endif %}
+        </div>
+        
+        <a href="/" class="btn-back">Probar otra imagen</a>
+    </div>
+</body>
+</html>
