@@ -26,3 +26,24 @@ Los modelos fueron entrenados y evaluados para asegurar un buen rendimiento en l
 La imagen muestra:
 - Una matriz de confusión mostrando el rendimiento por clase
 - Comparación entre el modelo base (Random Forest) y el modelo avanzado (Gradient Boosting optimizado)
+
+## Instalación y ejecución
+## 1. Clonar el repositorio
+git clone https://github.com/TomasMartinez99/prediccion_mnist.git
+cd prediccion_mnist
+
+## 2. Crea un entorno virtual
+python -m venv venv
+
+## 3. Activa el entorno virtual:
+Windows: venv\Scripts\activate
+MacOS/Linux: source venv/bin/activate
+
+## 4. Instalar las dependencias:
+pip install flask numpy pandas matplotlib seaborn scikit-learn pillow
+
+## 5. Entrenar el modelo:
+python train_advanced_model.py
+
+## 6. Ejecutar la aplicación
+python app.py
