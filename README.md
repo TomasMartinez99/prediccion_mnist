@@ -26,8 +26,3 @@ Los modelos fueron entrenados y evaluados para asegurar un buen rendimiento en l
 La imagen muestra:
 - Una matriz de confusión mostrando el rendimiento por clase
 - Comparación entre el modelo base (Random Forest) y el modelo avanzado (Gradient Boosting optimizado)
-
-## Cómo usar
-
-1. Clone este repositorio
-2. Instale las dependencias:
